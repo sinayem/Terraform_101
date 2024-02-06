@@ -1,0 +1,17 @@
+commands:
+terraform workspace new ProjectA
+terraform workspace new ProjectB
+terraform workspace list
+# by default when a new workspace is created it switched to that workspace
+terraform plan # for ProjectB with specified AMI and Tag
+terraform workspace select ProjectA
+terraform plan # for ProjectA with specified AMI and Tag
+
+# where does terraform state file located ??
+# a file called terraform.tfstate.d directory and inside this directory there are two directory call ProjectA and ProjectB
+terraform.tfstate.d/
+|-- ProjectA
+`-- terraform.tfstate
+
+|-- ProjectB
+`-- terraform.tfstate
